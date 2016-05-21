@@ -22,6 +22,7 @@ The code included in this repository is more or less all that I have used and co
 
 * Python
  * formal coursework:
+  * Client-server restaurant billing and management system (factored out into a separate repository)
   * AI search algorithms
   * Matrix solver and system of heat equations solver
  * informal coursework solver:
