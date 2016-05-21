@@ -22,17 +22,18 @@ The code included in this repository is more or less all that I have used and co
 
 * Python
  * formal coursework:
-  * Client-server restaurant billing and management system (factored out into a separate repository)
-  * AI search algorithms
-  * Matrix solver and system of heat equations solver
+    * Client-server restaurant billing and management system (factored out into a separate repository)
+    * AI search algorithms
+    * Matrix solver and system of heat equations solver
  * informal coursework solver:
-  * Trace table solver for register programs
+    * Trace table solver for register programs
 
 * C
- * formal coursework: MPI parallel bucket sort algorithm
+ * formal coursework: 
+    * MPI parallel bucket sort algorithm
 
 * Java
  * formal coursework: 
-  * client-server image hosting 
-  * client-server mail application
-  * unit testing
+    * client-server image hosting 
+    * client-server mail application
+    * unit testing
