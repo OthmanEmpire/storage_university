@@ -1,0 +1,6 @@
+
+public class Money 
+{
+	private int euros;
+	private int cents;
+}

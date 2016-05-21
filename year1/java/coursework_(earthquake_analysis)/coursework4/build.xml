@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<project name="Coursework4" basedir=".">
+
+  <property name="src.dir" value="src"/>
+  <property name="build.dir" value="bin"/>
+  <property name="doc.dir" value="doc"/>
+
+  <path id="project.classpath">
+    <pathelement location="${build.dir}"/>
+    <pathelement location="jmustache-1.10.jar"/>
+  </path>
+
+  <target name="prepare">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${doc.dir}"/>
+  </target>
+
+  <target name="compile" depends="prepare"
+    description="-- Compiles source code">
+    <javac srcdir="${src.dir}" destdir="${build.dir}"
+      includeantruntime="false">
+      <classpath refid="project.classpath"/>
+    </javac>
+  </target>
+
+  <target name="test" depends="compile"
+    description="-- Runs test program in QuakeList (Basic Solution)">
+    <java fork="true" classname="comp1551.cwk4.QuakeList">
+      <classpath refid="project.classpath"/>
+    </java>
+  </target>
+
+  <target name="info" depends="compile"
+    description="-- Runs QuakeInfo application (Intermediate Solution)">
+    <java fork="true" classname="comp1551.cwk4.QuakeInfo">
+      <classpath refid="project.classpath"/>
+      <arg value="4.5"/>
+      <arg value="week"/>
+    </java>
+  </target>
+
+  <target name="map" depends="compile"
+    description="-- Runs QuakeMap application (Advanced Solution)">
+    <java fork="true" classname="comp1551.cwk4.QuakeMap">
+      <classpath refid="project.classpath"/>
+      <arg value="4.5"/>
+      <arg value="week"/>
+      <arg value="map.html"/>
+    </java>
+  </target>
+
+  <target name="doc" depends="compile"
+    description="-- Generates documentation from Javadoc comments">
+    <javadoc destdir="${doc.dir}" author="true" version="true" use="true">
+      <classpath refid="project.classpath"/>
+      <package name="comp1551.cwk4"/>
+    </javadoc>
+  </target>
+
+  <target name="clean" description="-- Removes compiled code and docs">
+    <delete dir="${build.dir}"/>
+    <delete dir="${doc.dir}"/>
+  </target>
+
+  <target name="zip" description="-- Creates Zip archive for submission">
+    <zip destfile="cwk4.zip" basedir="." duplicate="fail"
+     includes="build.xml,${src.dir}/**/*.java"/>
+  </target>
+
+</project>
