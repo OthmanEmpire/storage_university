@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project name="Coursework2" basedir="." default="test">
+
+  <property name="src.dir" value="src"/>
+  <property name="build.dir" value="bin"/>
+  <property name="doc.dir" value="doc"/>
+
+  <path id="project.classpath">
+    <pathelement location="${build.dir}"/>
+    <pathelement location="junit-4.11.jar"/>
+    <pathelement location="hamcrest-all-1.3.jar"/>
+  </path>
+
+  <target name="prepare">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${doc.dir}"/>
+  </target>
+
+  <target name="compile" depends="prepare" description="Compile source code">
+    <javac srcdir="${src.dir}" destdir="${build.dir}"
+      includeantruntime="false">
+      <classpath refid="project.classpath"/>
+    </javac>
+  </target>
+
+  <target name="test" depends="compile" description="Run unit tests for all classes">
+    <junit fork="true">
+      <classpath refid="project.classpath"/>
+      <formatter type="brief" usefile="false"/>
+      <test name="comp2541.coursework2.CardTest"/>
+        <test name="comp2541.coursework2.DeckTest"/>
+        <test name="comp2541.coursework2.PokerHandTest"/>
+    </junit>
+  </target>
+
+	<target name="display" depends="compile" description="Run DisplayCards application">
+	  <java classname="comp2541.coursework2.DisplayCards" fork="true" jvm="java">
+	  	<classpath refid="project.classpath"/>
+	  </java>
+	</target>
+
+	<target name="doc" depends="compile" description="Run Javadoc to generate documentation">
+    <javadoc destdir="${doc.dir}" author="true" version="true" use="true">
+      <classpath refid="project.classpath"/>
+      <package name="comp2541.coursework2"/>
+      <fileset dir="${src.dir}">
+        <exclude name="**/*Test*"/>
+      </fileset>
+    </javadoc>
+  </target>
+
+  <target name="clean" description="Remove compiled code and docs">
+    <delete dir="${build.dir}"/>
+    <delete dir="${doc.dir}"/>
+  </target>
+
+  <target name="zip" description="Create Zip archive for submission">
+    <zip destfile="cwk2.zip" basedir="." defaultexcludes="false">
+      <exclude name="bin/"/>
+      <exclude name="doc/"/>
+      <exclude name="*.jar"/>
+    	<exclude name="images.zip"/>
+    </zip>
+  </target>
+
+    <target name="app" depends="compile" description="Runs the Probabilities class's main method">
+        <java classname="comp2541.coursework2.Probabilities" fork="true" jvm="java">
+            <classpath refid="project.classpath"/>
+        </java>
+    </target>
+
+</project>
