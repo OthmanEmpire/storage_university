@@ -6,7 +6,7 @@ The code included in this repository is more or less all that I have used and co
 
 * Python
  * lab exercises: week1 - week10
- * formal coursework: anagram.
+ * formal coursework: anagram generator, pygame (game development).
  * informal coursework solver: sorting algorithms, complex number manipulator.
 
 * C++
@@ -22,7 +22,7 @@ The code included in this repository is more or less all that I have used and co
 
 * Python
  * formal coursework:
-    * Client-server restaurant billing and management system (factored out into a separate repository)
+    * Client-server restaurant billing and management system (available in a separate repository)
     * AI search algorithms
     * Matrix solver and system of heat equations solver
  * informal coursework solver:
