@@ -1,0 +1,258 @@
+%----------------------------------------------------------------------------------------
+%	CREDITS AND SOURCES
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vertical Line Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Peter Wilson (herries.press@earthlink.net)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Aardvark non-copyright image reference: 
+% ClkerFreeVectorImages, (2012), Aardvark [ONLINE]. Available at: https://pixabay.com/static/uploads/photo/2012/04/28/20/56/animal-44528_960_720.png [Accessed 26 February 16].
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, a4paper, parskip=full]{article}
+
+% Package for mathematics
+\usepackage{amsmath}
+
+% Packages for inserting code (Python)
+\usepackage[procnames]{listings}
+\usepackage{color}
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python,
+	  	breaklines=true,
+	  	breakautoindent=false,
+%	  	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}, 
+    	basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+
+% Package for inline code
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
+
+% Package for adding space between paragraphs
+\usepackage{parskip}
+
+% Package for links
+\usepackage{hyperref}
+
+% Package for images
+\usepackage{graphicx}
+
+% Package for headers, footers, etc
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Othman Alikhan}
+\rhead{COMP2444}
+
+% Package for controlling title spacing
+\usepackage{titlesec}
+\usepackage{lipsum}% just to generate text for the example
+%\titlespacing*{\section}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%\titlespacing*{\subsection}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+	\hbox{ % Horizontal box
+		\hspace*{0.15\textwidth} % Whitespace to the left of the title page
+		\rule{1pt}{\textheight} % Vertical line
+		\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+			{\noindent\Huge \textbf{Red and Black}}\\[0.5\baselineskip] % Title
+			{\noindent\Huge \textbf{Gauss-Seidel In MPI}}\\[2\baselineskip] % Title
+			{\Large \textsc{COMP3920: Parallel Computing}}\\[0.5\baselineskip] % Module code and name
+			{\Large \textsc{University Of Leeds}}\\[7\baselineskip] % University name
+			{\large \textit{"Why did the functions stop calling each other? 
+			\\[0.5\baselineskip] Because they had constant arguments..."}} % Horrific pun
+			
+			
+			\vspace{0.3\textheight} % Whitespace between the title block and the publisher
+			\includegraphics[width=0.15\textwidth]{logo.png} \\[\baselineskip] % Team logo
+			{\noindent \today }\\[\baselineskip] % Today
+
+}}\endgroup}
+
+%----------------------------------------------------------------------------------------
+%	MAIN DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+	\titleGM
+	\newpage
+	\newpage
+
+	\section*{Question 1}
+	For N=128, the table of convergence tolerance against number of iterations:	
+
+	\begin{center}
+		\begin{tabular}{ c | c }
+
+			convTol & iters \\
+			\hline
+			10e-1 & 3713 \\
+			10e-2 & 7595 \\
+			10e-3 & 11477 \\
+			10e-4 & 15359 \\
+			10e-5 & 19241 \\
+			10e-6 & 23123 \\
+			10e-7 & 27005
+
+		\end{tabular}
+	\end{center}
+	
+		As the tolerance becomes more stringent in powers by 10, the number of iterations increases by a constant amount. In other words, the amount of iterations is logarithmically related to the convergence tolerance. 
+		
+		Namely, the relationship is captured by: 
+
+		$$iteration = 3882 * (-log convTol) - 169$$ 
+
+		which fits through all the data points with 0 error surprisingly.
+
+		As for the explaining the relation, as the tolerance becomes more stringent, more iterations are 
+needed to minimize the error suitably hence both the iteration amount and tolerance increase positively.  
+	
+		
+	\section*{Question 2}
+	The table of the matrix size N against the final error of vector x:
+
+	\begin{center}
+		\begin{tabular}{ c | c }
+
+			N & error \\
+			\hline
+			64 & 6.45149e-11 \\
+			128 & 0.00240055 \\
+			256 & 0.202453 \\
+			512 & 0.619469 \\
+			1024 & 0.830251
+			
+		\end{tabular}
+	\end{center}
+
+		The problem size is roughly linearly proportional to the error for a fixed number of iterations. One explanation to this is because the amount of error terms increases as N increases (since the error is some least squares fit)
+	
+	
+	\section*{Question 3}
+		In chronological order of the code, the routines are:
+
+		MPI\_Scatter, to efficiently strip partition the matrix A across all ranks since only a slice of the matrix is needed per rank for the subsequent calculations.
+
+		MPI\_Bcast, to send vector x and b to all ranks since all elements of both vectors are needed during matrix multiplication and other calculations.
+
+		MPI\_Gather, used to gather on the root rank all the updated values of x from all other ranks. This is needed since the fully updated vector x will need be broadcast to all ranks (synchronization).
+
+		MPI\_Bcast, to send the synchronized vector x on the root rank to all other ranks before proceeding to the next iteration. This is necessary since each iteration requires the newly updated values of x for Gauss-Seidel
+		
+		MPI\_Allreduce, to gather all the errors from each rank and sum them up. This is needed later on to define the while loop in terms of a convergence tolerance.
+		
+		As for the conditions for the code to work:
+
+		$N\ mod\ matrixSize == 0$, that is, the number of rows per process must be equal. Otherwise calculating the sum of the matrix multiplication will include some extra rows for the last process which has a different amount of matrix rows.
+
+		$matrixSize > p > 1$, that is, each process must have at least one row otherwise the initial calculation of $rowsPerProc = N / numprocs$ will yield $0$ and hence no rows being sent out to any ranks (a bigger concern though is the fact if there
+are more process than matrix rows then some of the process will be idle with the current implementation of matrix multiplication).
+
+	\newpage
+	\section*{Question 4}
+	For a fixed $N=1536$, $iters=2000$, the tables below illustrate the time taken for various number of processors $p$ and various number of machines:
+
+	\vspace{20pt}
+	\begin{center}
+		\begin{tabular}{ c | c | c}
+
+			p & parallel t (seconds) & ideal serial t (seconds) \\
+			\hline
+			1 & 5.242228 & 2.48321 \\
+			1 & 5.231823 & 2.48321 \\
+			1 & 5.202714 & 2.48321 \\
+			2 & 2.847799 & 4.96642 \\
+			2 & 2.835561 & 4.96642 \\
+			2 & 2.884595 & 4.96642 \\
+			4 & 2.413028 & 9.93284 \\
+			4 & 2.400443 & 9.93284 \\
+			4 & 2.426597 & 9.93284 
+			
+		\end{tabular}
+	
+		Table 1: One Machine.
+	\end{center}
+
+	\vspace{20pt}
+	\begin{center}
+		\begin{tabular}{ c | c | c}
+
+			p & parallel t (seconds) & ideal serial t (seconds) \\
+			\hline
+			4 & 7.834163 & 20.968912 \\
+			4 & 7.810804 & 20.968912 \\
+			4 & 7.811297 & 20.968912 \\
+			8 & 9.365273 & 41.937824 \\
+			8 & 9.362385 & 41.937824 \\
+			8 & 9.363021 & 41.937824
+			
+		\end{tabular}
+		
+		Table 2: Two Machines.
+	\end{center}
+
+	\vspace{20pt}
+	\begin{center}
+		\begin{tabular}{ c | c | c}
+
+			p & parallel t (seconds) & ideal serial t (seconds) \\
+			\hline
+			12 & 11.139044 & 29.79852 \\
+			12 & 11.110144 & 29.79852 \\
+			12 & 10.989798 & 29.79852
+			
+		\end{tabular}
+		
+		Table 3: Three Machines.
+	\end{center}
+	\vspace{20pt}
+	
+	For a single machine, the parallel time decreases as the number of processes increase whereas the opposite holds true for the ideal serial time. This is because as the number of processes increase on the same machine, the time spent computing increases in proportion to the time spent communicating between processes.
+	
+	We can note an increase in time taken for four processes when using a single machine vs multiple (two) machines. This is due to the fact that the communication overhead now includes time taken to send information across the network as oppose to solely within the same machine hence is slower.
+	
+	Additionally, as the number of processes increases on two machines from four to eight, the time taken for the parallel algorithm also increases. One explanation is that the time to communicate between processes (even internally on the same machine) scales much worse compared to the time spent computing on a single process for a fixed matrix size (i.e. the communication overheads increases faster than the time spent computing per rank as p increases for a fixed matrix size).
+	
+	Lastly, we can see that on the whole, the parallel algorithm performs vastly superior compared to the ideal serial implementation. However, as p increases so does the parallel time taken which isn't favoured for a fixed matrix size. Although, if the matrix size could vary as well then the parallel time would further out perform the ideal serial time.
+	
+	
+		
+\end{document}

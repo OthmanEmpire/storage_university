@@ -1,0 +1,19 @@
+Compiling:
+# GHCI compiler
+
+Types and classes:
+# Basic types
+# Polymorphic types
+# Curried functions
+
+Functions: 
+# Guarded equations
+# Pattern matching
+# Lambda expressions
+# Operator sections
+
+List comprehension:
+# List comprehension with two generators vs with single
+
+Recursion:
+# Mutual recursion

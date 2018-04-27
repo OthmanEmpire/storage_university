@@ -1,0 +1,5 @@
+map
+filter
+
+sumsqreven :: [Int] -> Int
+sumqreven ns = sum . map (^2) . filter even ns

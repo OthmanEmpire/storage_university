@@ -1,0 +1,5 @@
+Define the following functions in three ways via regular recursion, foldl and foldr:
+
+- sum
+- length 
+- reverse 

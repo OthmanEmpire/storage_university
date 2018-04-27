@@ -1,0 +1,7 @@
+Implement a program that simulates the encoding, transmission, and decoding of
+strings as sequences of bits. At the top level, the program should consist of three functions which take each character and convert it to and from an 8-bit binary representation.
+
+type Bit = Int
+encode :: String -> [Bit]
+channel :: [Bit] -> [Bit]
+decode :: [Bit] -> String
