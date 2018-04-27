@@ -31,7 +31,7 @@ The code included in this repository is more or less all that I have used and co
 
 * Python
     * formal coursework:
-        * ![https://github.com/OthmanEmpire/project_aardvark](Implement a client-server restaurant billing and management system)
+        * [Implement a client-server restaurant billing and management system](https://github.com//OthmanEmpire//project_aardvark)
         * Implement AI search algorithms
         * Matrix solver and system of heat equations solver
     * informal coursework solver:
