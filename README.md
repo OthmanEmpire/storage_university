@@ -8,7 +8,7 @@ The code included in this repository is more or less all that I have used and co
     * lab exercises: week1 - week10
     * formal coursework:
         * Develop an anagram generator
-        * Develop a game using the pygame framework
+        * [Develop a game using the pygame framework] (https://github.com/OthmanEmpire/project_pygame)
     * informal coursework solver:
         * Code sorting algorithms for practice
         * Implement a complex number manipulator (to solve coursework)
@@ -53,6 +53,8 @@ The code included in this repository is more or less all that I have used and co
 * Python
     * formal coursework:
         * Implementing a Neural Network to classify vectors (Perceptron)
+        * [Computer Vision with C. Elegans tracking (summer internship)](https://github.com/OthmanEmpire/project_elegance)
+        * Shape analysis and classification of C. Elegans (final year project)
 
 * C
     * formal coursework:
