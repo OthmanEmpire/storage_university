@@ -1,0 +1,158 @@
+22-Nov-2016 09:52:03.129 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The APR based Apache Tomcat Native library failed to load. The error reported was [C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+ java.lang.UnsatisfiedLinkError: C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+	at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+	at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1937)
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1855)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at org.apache.tomcat.jni.Library.<init>(Library.java:42)
+	at org.apache.tomcat.jni.Library.initialize(Library.java:178)
+	at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:198)
+	at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:107)
+	at org.apache.catalina.connector.Connector.setProtocol(Connector.java:565)
+	at org.apache.catalina.connector.Connector.<init>(Connector.java:70)
+	at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:64)
+	at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1190)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1343)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2786)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1458)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:578)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+22-Nov-2016 09:52:03.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.8
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 3 2016 21:14:13 UTC
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.8.0
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 8.1
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.3
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files (x86)\Java\jdk1.8.0_40\jre
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_40-b26
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+22-Nov-2016 09:52:03.294 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:/Users/Ozkh/Desktop/apache-tomcat-8.5.8-windows-x64/apache-tomcat-8.5.8/conf/logging.properties
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:/Users/Ozkh/Desktop/apache-tomcat-8.5.8-windows-x64/apache-tomcat-8.5.8
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:/Users/Ozkh/Desktop/apache-tomcat-8.5.8-windows-x64/apache-tomcat-8.5.8
+22-Nov-2016 09:52:03.295 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:/Users/Ozkh/Desktop/apache-tomcat-8.5.8-windows-x64/apache-tomcat-8.5.8/temp
+22-Nov-2016 09:52:03.779 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+22-Nov-2016 09:52:03.866 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-Nov-2016 09:52:03.869 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+22-Nov-2016 09:52:03.871 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-Nov-2016 09:52:03.872 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 2233 ms
+22-Nov-2016 09:52:03.961 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+22-Nov-2016 09:52:03.961 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.8
+22-Nov-2016 09:52:04.004 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\docs
+22-Nov-2016 09:52:04.819 INFO [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [149] milliseconds.
+22-Nov-2016 09:52:04.844 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\docs has finished in 840 ms
+22-Nov-2016 09:52:04.844 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\examples
+22-Nov-2016 09:52:06.087 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\examples has finished in 1,243 ms
+22-Nov-2016 09:52:06.087 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\host-manager
+22-Nov-2016 09:52:06.150 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\host-manager has finished in 63 ms
+22-Nov-2016 09:52:06.152 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\manager
+22-Nov-2016 09:52:06.218 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\manager has finished in 68 ms
+22-Nov-2016 09:52:06.218 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\ROOT
+22-Nov-2016 09:52:06.249 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Users\Ozkh\Desktop\apache-tomcat-8.5.8-windows-x64\apache-tomcat-8.5.8\webapps\ROOT has finished in 31 ms
+22-Nov-2016 09:52:06.252 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-8080]
+22-Nov-2016 09:52:06.259 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+22-Nov-2016 09:52:06.260 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2388 ms
+22-Nov-2016 09:52:06.709 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+22-Nov-2016 09:52:06.710 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+22-Nov-2016 09:52:06.762 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+22-Nov-2016 09:52:06.813 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+22-Nov-2016 09:52:06.867 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+22-Nov-2016 09:52:06.868 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+22-Nov-2016 09:52:06.869 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+22-Nov-2016 09:52:06.869 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+22-Nov-2016 11:03:01.093 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The APR based Apache Tomcat Native library failed to load. The error reported was [C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+ java.lang.UnsatisfiedLinkError: C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+	at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+	at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1937)
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1855)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at org.apache.tomcat.jni.Library.<init>(Library.java:42)
+	at org.apache.tomcat.jni.Library.initialize(Library.java:178)
+	at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:198)
+	at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:107)
+	at org.apache.catalina.connector.Connector.setProtocol(Connector.java:565)
+	at org.apache.catalina.connector.Connector.<init>(Connector.java:70)
+	at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:64)
+	at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1190)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1343)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2786)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1458)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:578)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+22-Nov-2016 11:03:01.280 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.8
+22-Nov-2016 11:03:01.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 3 2016 21:14:13 UTC
+22-Nov-2016 11:03:01.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.8.0
+22-Nov-2016 11:03:01.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 8.1
+22-Nov-2016 11:03:01.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.3
+22-Nov-2016 11:03:01.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86
+22-Nov-2016 11:03:01.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files (x86)\Java\jdk1.8.0_40\jre
+22-Nov-2016 11:03:01.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_40-b26
+22-Nov-2016 11:03:01.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+22-Nov-2016 11:03:01.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8
+22-Nov-2016 11:03:01.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8
+22-Nov-2016 11:03:01.286 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+22-Nov-2016 11:03:01.286 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Nov-2016 11:03:01.286 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\conf\logging.properties
+22-Nov-2016 11:03:01.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Nov-2016 11:03:01.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8
+22-Nov-2016 11:03:01.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8
+22-Nov-2016 11:03:01.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\temp
+22-Nov-2016 11:03:01.719 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+22-Nov-2016 11:03:01.813 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-Nov-2016 11:03:01.818 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+22-Nov-2016 11:03:01.820 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-Nov-2016 11:03:01.820 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1446 ms
+22-Nov-2016 11:03:01.918 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+22-Nov-2016 11:03:01.918 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.8
+22-Nov-2016 11:03:01.939 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\docs
+22-Nov-2016 11:03:02.707 INFO [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [135] milliseconds.
+22-Nov-2016 11:03:02.739 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\docs has finished in 800 ms
+22-Nov-2016 11:03:02.740 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\examples
+22-Nov-2016 11:03:03.800 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\examples has finished in 1,061 ms
+22-Nov-2016 11:03:03.800 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\host-manager
+22-Nov-2016 11:03:03.865 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\host-manager has finished in 65 ms
+22-Nov-2016 11:03:03.865 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\manager
+22-Nov-2016 11:03:03.915 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\manager has finished in 50 ms
+22-Nov-2016 11:03:03.915 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\ROOT
+22-Nov-2016 11:03:03.958 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\Oz\2_university\1_code\year3\java\apache-tomcat-8.5.8\webapps\ROOT has finished in 43 ms
+22-Nov-2016 11:03:03.962 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-8080]
+22-Nov-2016 11:03:03.969 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+22-Nov-2016 11:03:03.970 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2149 ms
